@@ -22,5 +22,7 @@ jobs:
       run: npm i
     - name: Run eslint
       run: npm run lint
-    - name: Run tests
-      run: npm run wdio
+   - name: Run tests
+  run: npm run wdio
+  env:
+    CI: true
