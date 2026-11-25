@@ -4,13 +4,31 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    cardNumberField: '#number',
+    driverMessageField: '#comment',
+    blanketSwitchCheckbox: '.r-type-switch .switch-input',
+    iceCreamQuantity: '.r-type-counter .counter-value',
+    cardCodeField: '.card-input#code',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
+    supportiveButton: "//div[contains(@class,'tcard')][.//img[@alt='Supportive']]",
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    paymentMethodButton: '.pp-button.filled .pp-text',
+    paymentMethodCloseButton: '.payment-picker .close-button',
+    linkCardButton: 'button=Link',
+    addCardButton: '.pp-title',
+    blanketSwitch: '.r-type-switch .slider',
+    iceCreamPlusButton: '.r-type-counter .counter-plus',
+    orderButton: '.smart-button',
     // Modals
     phoneNumberModal: '.modal',
+    orderModal: '.order.shown',
+    driverArrivalInfo: '.order-header-title',
+    carSearchTitle: '.order-header-title',
+    orderNumber: '.order-number .number',
+    
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);

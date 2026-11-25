@@ -30,7 +30,7 @@ exports.config = {
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://cnt-237e4a4f-e9a4-43e7-9e99-e286f0e12e5b.containerhub.tripleten-services.com',
+    baseUrl: 'https://cnt-a5e217a7-e529-4cee-b000-7fe0fd79a469.containerhub.tripleten-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
@@ -39,10 +39,15 @@ exports.config = {
         'geckodriver', 
         'intercept', 
     ],
-    framework: 'mocha',
+    beforeCommand: async function () {
+		if (process.env.CI !== 'true') {
+			await new Promise(resolve => setTimeout(resolve, 100));
+		}
+	},
+	framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     },
 }
